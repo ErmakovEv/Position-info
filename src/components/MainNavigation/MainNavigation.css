@@ -1,0 +1,8 @@
+.header {
+  position: fixed;
+  z-index: 1000;
+}
+.header a {
+  text-decoration: none;
+  color: white;
+}
