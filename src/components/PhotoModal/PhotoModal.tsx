@@ -27,7 +27,7 @@ function PhotoModal({ isOpen, handleClose, photoArr }: PhotoModalProps) {
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
-      sx={{ display: 'flex', justifyContent: 'center' }}
+      sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
     >
       <Box
         sx={{
@@ -41,9 +41,11 @@ function PhotoModal({ isOpen, handleClose, photoArr }: PhotoModalProps) {
         }}
       >
         <Box
-          sx={{ height: '100%', width: '100%' }}
           component="img"
           src={photoArr[activeStep]}
+          width="75vw"
+          height="75vh"
+          sx={{ margin: '0 auto', pt: 3 }}
         />
         <Box>
           <MobileStepper
