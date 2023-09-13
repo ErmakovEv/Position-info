@@ -19,6 +19,7 @@ import {
 } from '@mui/material';
 import Button from '@mui/material/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import CircleIcon from '@mui/icons-material/Circle';
 import Position from '../../db/types';
 
 // import List from '@mui/material/List';
@@ -195,7 +196,7 @@ export default function DrawerPositions({
         <List>
           {positions.map((item) => (
             <div key={item.id}>
-              <ListItem button>
+              <ListItem>
                 {/* <ListItemText primary={item.name} /> */}
                 <Accordion sx={{ width: 300 }}>
                   <AccordionSummary
@@ -203,12 +204,32 @@ export default function DrawerPositions({
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
-                    <Typography variant="body2">
-                      <span>{item.projectNumber}.</span>
-                    </Typography>
-                    <Typography variant="body2">
-                      <span>{item.name}</span>
-                    </Typography>
+                    {/* <Box
+                     
+                    > */}
+                    <Box
+                      sx={{
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      <Box sx={{ display: 'flex' }}>
+                        <Typography variant="body2">
+                          <span>{item.projectNumber}.</span>
+                        </Typography>
+                        <Typography variant="body2">
+                          <span>{item.name}</span>
+                        </Typography>
+                      </Box>
+
+                      <CircleIcon
+                        sx={{ mr: 2, color: item.isWorking ? 'green' : 'red' }}
+                        fontSize="small"
+                      />
+                    </Box>
+
+                    {/* </Box> */}
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography variant="body2">

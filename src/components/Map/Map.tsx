@@ -1,7 +1,6 @@
 import {
   YMaps,
   Map as YandexMap,
-  Placemark,
   RouteButton,
   TypeSelector,
   ZoomControl,
@@ -10,13 +9,15 @@ import {
   // withYMaps,
   // useYMaps,
 } from '@pbe/react-yandex-maps';
+import CustomPlacemark from '../CustomPlacemark/CustomPlacemark';
 import Position from '../../db/types';
 
 type MapProps = {
   positions: Position[];
+  indexMarkerType: number;
 };
 
-function Map({ positions }: MapProps) {
+function Map({ positions, indexMarkerType }: MapProps) {
   return (
     <YMaps query={{ apikey: '5bf1dfe2-6837-415a-8c4d-7eabd85d601c' }}>
       <YandexMap
@@ -35,38 +36,7 @@ function Map({ positions }: MapProps) {
         <RulerControl state={{ position: { right: 10, bottom: 30 } }} />
 
         {positions.map((pos) => (
-          <Placemark
-            key={pos.id}
-            // modules={['geoObject.addon.hint']}
-            modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
-            geometry={pos.coordinates}
-            options={{ preset: 'islands#blueIcon' }}
-            properties={{
-              balloonContentBody: `
-              <div>
-                <div>
-                  ${pos.id}
-                  ${pos.name}
-                </div>
-                <div>
-                  ${pos.equipmentType}
-                  ${pos.boxingType}
-                  ${pos.positionType}
-                </div>
-                <div>
-                  serv#:${pos.mlatNumber}
-                  ip:${pos.ip}
-                  vlan:${pos.vlan}
-                </div>
-                <div>
-                  доступ: ${pos.accessType}
-                </div>
-            </div>`,
-              // iconCaption: item.showLabel || showLabels ? item.label : null,
-              hintContent: `${pos.id} ${pos.name}`,
-              iconContent: pos.projectNumber,
-            }}
-          />
+          <CustomPlacemark position={pos} indexMarkerType={indexMarkerType} />
         ))}
 
         {/* <Clusterer

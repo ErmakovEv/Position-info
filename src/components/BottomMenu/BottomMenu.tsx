@@ -2,12 +2,26 @@ import { Box, IconButton } from '@mui/material';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import FmdBadIcon from '@mui/icons-material/FmdBad';
 import LogoutIcon from '@mui/icons-material/Logout';
+import AddCommentIcon from '@mui/icons-material/AddComment';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+
+const ICON_ARRAY = [
+  <FmdBadIcon sx={{ color: '#514f4f' }} />,
+  <AddCommentIcon sx={{ color: '#514f4f' }} />,
+  <AddCircleIcon sx={{ color: '#514f4f' }} />,
+];
 
 type BottomMenuProps = {
   drawerOpenCallBack: () => void;
+  indexMarkerType: number;
+  indexMarkerTypeHandler: () => void;
 };
 
-function BottomMenu({ drawerOpenCallBack }: BottomMenuProps) {
+function BottomMenu({
+  drawerOpenCallBack,
+  indexMarkerType,
+  indexMarkerTypeHandler,
+}: BottomMenuProps) {
   return (
     <div
       style={{
@@ -39,8 +53,8 @@ function BottomMenu({ drawerOpenCallBack }: BottomMenuProps) {
         >
           <FormatListBulletedIcon sx={{ color: '#514f4f' }} />
         </IconButton>
-        <IconButton>
-          <FmdBadIcon sx={{ color: '#514f4f' }} />
+        <IconButton onClick={indexMarkerTypeHandler}>
+          {ICON_ARRAY[indexMarkerType]}
         </IconButton>
         <IconButton>
           <LogoutIcon sx={{ color: '#514f4f' }} />

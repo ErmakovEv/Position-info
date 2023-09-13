@@ -6,6 +6,8 @@ import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import DrawerPositions from '../../components/DrawerPositions/DrawerPositions';
 import PhotoModal from '../../components/PhotoModal/PhotoModal';
 
+export const MARKER_TYPE_ARRAY = ['projectNumber', 'projectName', 'workStatus'];
+
 export default function MainPage() {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [photoModalOpen, setPhotoModalOpen] = useState<boolean>(false);
@@ -15,6 +17,7 @@ export default function MainPage() {
     equipmentTypeFilter: 'All',
     boxingTypeFilter: 'All',
   });
+  const [indexMarkerType, setIndexMarkerType] = useState<number>(0);
 
   const filterPositions = () => {
     return positions
@@ -55,9 +58,16 @@ export default function MainPage() {
   };
 
   return (
-    <>
-      <Map positions={filteredPositions} />
-      <BottomMenu drawerOpenCallBack={() => setDrawerOpen(!drawerOpen)} />
+    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
+      <Map positions={filteredPositions} indexMarkerType={indexMarkerType} />
+      <BottomMenu
+        drawerOpenCallBack={() => setDrawerOpen(!drawerOpen)}
+        indexMarkerType={indexMarkerType}
+        indexMarkerTypeHandler={() => {
+          if (indexMarkerType === 2) setIndexMarkerType(0);
+          else setIndexMarkerType(indexMarkerType + 1);
+        }}
+      />
       <DrawerPositions
         positions={filteredPositions}
         isOpen={drawerOpen}
@@ -93,6 +103,6 @@ export default function MainPage() {
         handleClose={() => setPhotoModalOpen(false)}
         photoArr={getPhotoFromPositionsArr()}
       />
-    </>
+    </div>
   );
 }
