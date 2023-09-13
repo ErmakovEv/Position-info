@@ -22,6 +22,7 @@ const positions: Position[] = [
     vlan: 1272,
     projectNumber: 25,
     coordinates: [59.670999, 30.414993],
+    mlatNumber: 21,
   },
   {
     id: '78-366',
@@ -44,6 +45,7 @@ const positions: Position[] = [
     vlan: 1253,
     projectNumber: 20,
     coordinates: [59.709372, 30.278007],
+    mlatNumber: 19,
   },
   {
     id: '78-4511',
@@ -66,6 +68,7 @@ const positions: Position[] = [
     vlan: 1268,
     projectNumber: 8,
     coordinates: [59.749982, 30.31023],
+    mlatNumber: 38,
   },
   {
     id: '47-35479',
@@ -88,6 +91,7 @@ const positions: Position[] = [
     vlan: 1244,
     projectNumber: 68,
     coordinates: [59.786763, 30.174153],
+    mlatNumber: 45,
   },
   {
     id: '78-1036',
@@ -110,6 +114,7 @@ const positions: Position[] = [
     vlan: 1263,
     projectNumber: 23,
     coordinates: [60.064469, 30.16242],
+    mlatNumber: 47,
   },
   {
     id: '78-4258',
@@ -132,6 +137,7 @@ const positions: Position[] = [
     vlan: 1270,
     projectNumber: 30,
     coordinates: [59.821245, 30.407358],
+    mlatNumber: 23,
   },
   {
     id: '78-5577',
@@ -154,6 +160,7 @@ const positions: Position[] = [
     vlan: 1252,
     projectNumber: 22,
     coordinates: [59.836361, 30.26973],
+    mlatNumber: 20,
   },
   {
     id: '47-1405',
@@ -176,6 +183,7 @@ const positions: Position[] = [
     vlan: 1261,
     projectNumber: 33,
     coordinates: [59.842173, 29.752915],
+    mlatNumber: 25,
   },
   {
     id: '47-5628',
@@ -198,6 +206,7 @@ const positions: Position[] = [
     vlan: 1295,
     projectNumber: 14,
     coordinates: [59.764282, 29.874807],
+    mlatNumber: 17,
   },
   {
     id: '78-21518',
@@ -220,6 +229,7 @@ const positions: Position[] = [
     vlan: 1242,
     projectNumber: 9,
     coordinates: [59.924166, 29.694321],
+    mlatNumber: 46,
   },
   {
     id: '47-26095',
@@ -242,6 +252,7 @@ const positions: Position[] = [
     vlan: 1274,
     projectNumber: 64,
     coordinates: [59.757843, 30.75826],
+    mlatNumber: 42,
   },
   {
     id: '78-4725',
@@ -264,6 +275,7 @@ const positions: Position[] = [
     vlan: 1258,
     projectNumber: 53,
     coordinates: [59.797979, 30.606144],
+    mlatNumber: 34,
   },
   {
     id: '47-6096',
@@ -286,6 +298,7 @@ const positions: Position[] = [
     vlan: 1243,
     projectNumber: 18,
     coordinates: [59.889449, 30.587302],
+    mlatNumber: 39,
   },
   {
     id: '47-6161',
@@ -308,6 +321,7 @@ const positions: Position[] = [
     vlan: 1273,
     projectNumber: 61,
     coordinates: [59.835948, 30.571951],
+    mlatNumber: 40,
   },
   {
     id: '47-1351',
@@ -330,6 +344,7 @@ const positions: Position[] = [
     vlan: 1259,
     projectNumber: 49,
     coordinates: [59.877954, 30.811274],
+    mlatNumber: 30,
   },
   {
     id: '47-34365',
@@ -352,6 +367,7 @@ const positions: Position[] = [
     vlan: 1271,
     projectNumber: 65,
     coordinates: [59.877271, 30.639025],
+    mlatNumber: 43,
   },
   {
     id: '47-970',
@@ -374,6 +390,7 @@ const positions: Position[] = [
     vlan: 1256,
     projectNumber: 3,
     coordinates: [60.174616, 29.990209],
+    mlatNumber: 26,
   },
   {
     id: '47-1267',
@@ -396,6 +413,7 @@ const positions: Position[] = [
     vlan: 1255,
     projectNumber: 4,
     coordinates: [60.183824, 30.093717],
+    mlatNumber: 31,
   },
   {
     id: '47-2214',
@@ -418,6 +436,7 @@ const positions: Position[] = [
     vlan: 1269,
     projectNumber: 32,
     coordinates: [60.139386, 30.072753],
+    mlatNumber: 24,
   },
   {
     id: '47-36262',
@@ -440,6 +459,7 @@ const positions: Position[] = [
     vlan: 1245,
     projectNumber: 66,
     coordinates: [60.141028, 30.193615],
+    mlatNumber: 44,
   },
   {
     id: '47-2623',
@@ -462,6 +482,7 @@ const positions: Position[] = [
     vlan: 1250,
     projectNumber: 42,
     coordinates: [60.19815, 30.240576],
+    mlatNumber: 28,
   },
   {
     id: '47-2598',
@@ -484,6 +505,7 @@ const positions: Position[] = [
     vlan: 1257,
     projectNumber: 59,
     coordinates: [60.15325, 30.282053],
+    mlatNumber: 36,
   },
   {
     id: '78-6247',
@@ -506,6 +528,7 @@ const positions: Position[] = [
     vlan: 1249,
     projectNumber: 50,
     coordinates: [59.969013, 30.266856],
+    mlatNumber: 32,
   },
   {
     id: '78-955',
@@ -528,6 +551,7 @@ const positions: Position[] = [
     vlan: 1267,
     projectNumber: 12,
     coordinates: [60.023096, 30.408946],
+    mlatNumber: 15,
   },
   {
     id: '47-2610',
@@ -550,6 +574,7 @@ const positions: Position[] = [
     vlan: 1251,
     projectNumber: 41,
     coordinates: [60.16021, 30.437801],
+    mlatNumber: 27,
   },
   {
     id: '47-1430',
@@ -572,6 +597,7 @@ const positions: Position[] = [
     vlan: 1260,
     projectNumber: 45,
     coordinates: [60.112352, 30.327573],
+    mlatNumber: 29,
   },
   {
     id: '47-2189 ',
@@ -594,6 +620,7 @@ const positions: Position[] = [
     vlan: 1247,
     projectNumber: 54,
     coordinates: [60.146375, 30.577208],
+    mlatNumber: 35,
   },
   {
     id: '47-4142',
@@ -616,6 +643,7 @@ const positions: Position[] = [
     vlan: 1248,
     projectNumber: 52,
     coordinates: [60.127371, 30.464958],
+    mlatNumber: 33,
   },
   {
     id: '78-11294',
@@ -638,6 +666,7 @@ const positions: Position[] = [
     vlan: 1246,
     projectNumber: 62,
     coordinates: [60.092242, 30.243797],
+    mlatNumber: 41,
   },
   {
     id: '78-590',
@@ -660,6 +689,7 @@ const positions: Position[] = [
     vlan: 1264,
     projectNumber: 17,
     coordinates: [60.033585, 29.991689],
+    mlatNumber: 18,
   },
   {
     id: '78-2596',
@@ -682,6 +712,7 @@ const positions: Position[] = [
     vlan: 1262,
     projectNumber: 27,
     coordinates: [60.009752, 30.017032],
+    mlatNumber: 22,
   },
   {
     id: '78-2291',
@@ -704,6 +735,7 @@ const positions: Position[] = [
     vlan: 1266,
     projectNumber: 13,
     coordinates: [59.978029, 30.560413],
+    mlatNumber: 16,
   },
   {
     id: '47-2290',
@@ -726,6 +758,7 @@ const positions: Position[] = [
     vlan: 1275,
     projectNumber: 10,
     coordinates: [59.950028, 30.551496],
+    mlatNumber: 14,
   },
   {
     id: '47-7666',
@@ -748,6 +781,7 @@ const positions: Position[] = [
     vlan: 1254,
     projectNumber: 6,
     coordinates: [59.999089, 30.677074],
+    mlatNumber: 37,
   },
 ];
 

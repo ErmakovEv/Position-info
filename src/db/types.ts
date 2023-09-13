@@ -12,5 +12,6 @@ export default interface Position {
   ip: string;
   vlan: number;
   projectNumber: number;
+  mlatNumber: number;
   coordinates: number[];
 }

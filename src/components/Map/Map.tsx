@@ -54,8 +54,12 @@ function Map({ positions }: MapProps) {
                   ${pos.positionType}
                 </div>
                 <div>
-                  ${pos.ip}
-                  ${pos.vlan}
+                  serv#:${pos.mlatNumber}
+                  ip:${pos.ip}
+                  vlan:${pos.vlan}
+                </div>
+                <div>
+                  доступ: ${pos.accessType}
                 </div>
             </div>`,
               // iconCaption: item.showLabel || showLabels ? item.label : null,

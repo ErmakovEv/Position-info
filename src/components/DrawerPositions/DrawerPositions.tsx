@@ -235,6 +235,8 @@ export default function DrawerPositions({
                       <span style={{ fontWeight: 900 }}>{item.accessType}</span>
                     </Typography>
                     <Typography variant="body2">
+                      serv#:{' '}
+                      <span style={{ fontWeight: 900 }}>{item.mlatNumber}</span>{' '}
                       vlan: <span style={{ fontWeight: 900 }}>{item.vlan}</span>{' '}
                       ip: <span style={{ fontWeight: 900 }}>{item.ip}</span>
                     </Typography>
