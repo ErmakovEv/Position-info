@@ -23,8 +23,8 @@ export default function MainPage() {
 
   useEffect(() => {
     axios
-      .get('http://46.229.128.194:5555/status')
-      .then((response) => console.log(response))
+      .get('https://server.ermakov-evgeny.ru/proxy')
+      .then((response) => console.log(response.data))
       .catch((error) => console.log(error));
   }, []);
 
