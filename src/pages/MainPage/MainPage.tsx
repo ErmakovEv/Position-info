@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect, useRef } from 'react';
+import axios, { AxiosResponse } from 'axios';
 import positions from '../../db/positions';
 import Position from '../../db/types';
 import Map from '../../components/Map/Map';
@@ -8,9 +8,14 @@ import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import DrawerPositions from '../../components/DrawerPositions/DrawerPositions';
 import PhotoModal from '../../components/PhotoModal/PhotoModal';
 
-// export const MARKER_TYPE_ARRAY = ['projectNumber', 'projectName', 'workStatus'];
+type ResponseType = {
+  c19: {
+    remote_sensor: Array<{ online: boolean; id: number }>;
+  };
+};
 
 export default function MainPage() {
+  const [stations, setStations] = useState<Position[]>([]);
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [photoModalOpen, setPhotoModalOpen] = useState<boolean>(false);
   const [photoPos, setPhotoPos] = useState<string>('');
@@ -21,37 +26,25 @@ export default function MainPage() {
   });
   const [indexMarkerType, setIndexMarkerType] = useState<number>(0);
 
+  const newRef = useRef(0);
+  console.log('render', (newRef.current += 1));
+
   useEffect(() => {
     axios
       .get('https://server.ermakov-evgeny.ru/proxy')
-      .then((response) => console.log(response.data))
+      .then((response: AxiosResponse<ResponseType>) => {
+        const newStations = [...positions];
+        newStations.forEach((item) => {
+          const findedStation = response.data.c19.remote_sensor.find(
+            (sensor) => sensor.id === item.mlatNumber
+          );
+          // eslint-disable-next-line no-param-reassign
+          item.isWorking = findedStation?.online || false;
+        });
+        setStations(newStations);
+      })
       .catch((error) => console.log(error));
   }, []);
-
-  const filterPositions = () => {
-    return positions
-      .filter((pos) => {
-        // eslint-disable-next-line no-restricted-syntax
-        for (const key in pos) {
-          if (
-            pos[key as keyof Position].toString().includes(filters.searchInput)
-          ) {
-            return true;
-          }
-        }
-        return false;
-      })
-      .filter((pos) => {
-        if (filters.equipmentTypeFilter === 'All') return true;
-        return pos.equipmentType === filters.equipmentTypeFilter;
-      })
-      .filter((pos) => {
-        if (filters.boxingTypeFilter === 'All') return true;
-        return pos.boxingType === filters.boxingTypeFilter;
-      });
-  };
-
-  const filteredPositions = filterPositions();
 
   const photoModalHandler = (id: string) => {
     setPhotoPos(id);
@@ -68,7 +61,7 @@ export default function MainPage() {
 
   return (
     <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
-      <Map positions={filteredPositions} indexMarkerType={indexMarkerType} />
+      <Map positions={stations} indexMarkerType={indexMarkerType} />
       <BottomMenu
         drawerOpenCallBack={() => setDrawerOpen(!drawerOpen)}
         indexMarkerType={indexMarkerType}
@@ -78,7 +71,7 @@ export default function MainPage() {
         }}
       />
       <DrawerPositions
-        positions={filteredPositions}
+        positions={stations}
         isOpen={drawerOpen}
         setOpen={() => setDrawerOpen(false)}
         searchInput={filters.searchInput}
@@ -87,7 +80,18 @@ export default function MainPage() {
             ...filters,
             searchInput: value,
           };
+
+          const newPos = positions.filter((pos) => {
+            // eslint-disable-next-line no-restricted-syntax
+            for (const key in pos) {
+              if (pos[key as keyof Position].toString().includes(value)) {
+                return true;
+              }
+            }
+            return false;
+          });
           setFilters(newFilters);
+          setStations(newPos);
         }}
         equipmentTypeFilter={filters.equipmentTypeFilter}
         setEquipmentTypeFilter={(value: string) => {
@@ -95,7 +99,12 @@ export default function MainPage() {
             ...filters,
             equipmentTypeFilter: value,
           };
+          const newPos = positions.filter((pos) => {
+            if (value === 'All') return true;
+            return pos.equipmentType === value;
+          });
           setFilters(newFilters);
+          setStations(newPos);
         }}
         boxingTypeFilter={filters.boxingTypeFilter}
         setBoxingTypeFilter={(value: string) => {
@@ -103,7 +112,13 @@ export default function MainPage() {
             ...filters,
             boxingTypeFilter: value,
           };
+
+          const newPos = positions.filter((pos) => {
+            if (value === 'All') return true;
+            return pos.boxingType === value;
+          });
           setFilters(newFilters);
+          setStations(newPos);
         }}
         photoModalHandler={photoModalHandler}
       />

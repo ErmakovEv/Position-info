@@ -8,7 +8,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -31,7 +31,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -54,7 +54,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -77,7 +77,7 @@ const positions: Position[] = [
     positionType: 'open-platform',
     boxingType: 'termobox',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -100,7 +100,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'rock',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -123,7 +123,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -146,7 +146,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -169,7 +169,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -192,7 +192,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -215,7 +215,7 @@ const positions: Position[] = [
     positionType: 'open-platform',
     boxingType: 'termobox',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -238,7 +238,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'letter',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -261,7 +261,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -284,7 +284,7 @@ const positions: Position[] = [
     positionType: 'open-platform',
     boxingType: 'termobox',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -307,7 +307,7 @@ const positions: Position[] = [
     positionType: 'open-platform',
     boxingType: 'termobox',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -330,7 +330,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -353,7 +353,7 @@ const positions: Position[] = [
     positionType: 'open-platform',
     boxingType: 'termobox',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -376,7 +376,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -399,7 +399,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -422,7 +422,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'letter',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -445,7 +445,7 @@ const positions: Position[] = [
     positionType: 'open-platform',
     boxingType: 'termobox',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -468,7 +468,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -491,7 +491,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -514,7 +514,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -537,7 +537,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -560,7 +560,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'letter',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -583,7 +583,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -606,7 +606,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -629,7 +629,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -652,7 +652,7 @@ const positions: Position[] = [
     positionType: 'open-platform',
     boxingType: 'termobox',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -675,7 +675,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -698,7 +698,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -721,7 +721,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
@@ -744,7 +744,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: 'SFP',
     contacts: '',
     image: [
@@ -767,7 +767,7 @@ const positions: Position[] = [
     positionType: 'trailer',
     boxingType: 'box',
     accessType: 'free',
-    isWorking: true,
+    isWorking: false,
     description: '',
     contacts: '',
     image: [
