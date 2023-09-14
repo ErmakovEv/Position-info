@@ -1,4 +1,5 @@
-import { useState } from 'react';
+/* eslint-disable no-console */
+import { useState, useEffect } from 'react';
 import positions from '../../db/positions';
 import Position from '../../db/types';
 import Map from '../../components/Map/Map';
@@ -6,7 +7,7 @@ import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import DrawerPositions from '../../components/DrawerPositions/DrawerPositions';
 import PhotoModal from '../../components/PhotoModal/PhotoModal';
 
-export const MARKER_TYPE_ARRAY = ['projectNumber', 'projectName', 'workStatus'];
+// export const MARKER_TYPE_ARRAY = ['projectNumber', 'projectName', 'workStatus'];
 
 export default function MainPage() {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
@@ -18,6 +19,13 @@ export default function MainPage() {
     boxingTypeFilter: 'All',
   });
   const [indexMarkerType, setIndexMarkerType] = useState<number>(0);
+
+  useEffect(() => {
+    fetch('http://46.229.128.194:5555/status')
+      .then((data) => data.json())
+      .then((json) => console.log(json))
+      .catch(() => console.log('error!!'));
+  }, []);
 
   const filterPositions = () => {
     return positions

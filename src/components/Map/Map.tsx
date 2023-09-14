@@ -36,7 +36,11 @@ function Map({ positions, indexMarkerType }: MapProps) {
         <RulerControl state={{ position: { right: 10, bottom: 30 } }} />
 
         {positions.map((pos) => (
-          <CustomPlacemark position={pos} indexMarkerType={indexMarkerType} />
+          <CustomPlacemark
+            position={pos}
+            indexMarkerType={indexMarkerType}
+            key={pos.id}
+          />
         ))}
 
         {/* <Clusterer
