@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import positions from '../../db/positions';
 import Position from '../../db/types';
 import Map from '../../components/Map/Map';
@@ -21,10 +22,10 @@ export default function MainPage() {
   const [indexMarkerType, setIndexMarkerType] = useState<number>(0);
 
   useEffect(() => {
-    fetch('http://46.229.128.194:5555/status')
-      .then((data) => data.json())
-      .then((json) => console.log(json))
-      .catch(() => console.log('error!!'));
+    axios
+      .get('http://46.229.128.194:5555/status')
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
   }, []);
 
   const filterPositions = () => {
