@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import positions from '../../db/positions';
 import Position from '../../db/types';
@@ -15,6 +14,7 @@ type ResponseType = {
 };
 
 export default function MainPage() {
+  const [positionsData, setPositionsData] = useState<Position[]>(positions);
   const [stations, setStations] = useState<Position[]>([]);
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const [photoModalOpen, setPhotoModalOpen] = useState<boolean>(false);
@@ -26,10 +26,27 @@ export default function MainPage() {
   });
   const [indexMarkerType, setIndexMarkerType] = useState<number>(0);
 
-  const newRef = useRef(0);
-  console.log('render', (newRef.current += 1));
-
   useEffect(() => {
+    const { searchInput, equipmentTypeFilter, boxingTypeFilter } = filters;
+
+    const newStations = positionsData.filter((item) => {
+      return Object.keys(item).find((key) => {
+        if (item[key as keyof Position].toString().includes(searchInput)) {
+          if (
+            equipmentTypeFilter === 'All' ||
+            (item.equipmentType === equipmentTypeFilter &&
+              boxingTypeFilter === 'All') ||
+            boxingTypeFilter === item.boxingType
+          )
+            return true;
+        }
+        return false;
+      });
+    });
+    setStations(newStations);
+  }, [positionsData, filters]);
+
+  const fetchWorkingSatus = () => {
     axios
       .get('https://server.ermakov-evgeny.ru/proxy')
       .then((response: AxiosResponse<ResponseType>) => {
@@ -41,9 +58,16 @@ export default function MainPage() {
           // eslint-disable-next-line no-param-reassign
           item.isWorking = findedStation?.online || false;
         });
-        setStations(newStations);
+        setPositionsData(newStations);
       })
+      // eslint-disable-next-line no-console
       .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fetchWorkingSatus();
+    const intervalID = setInterval(fetchWorkingSatus, 10000);
+    return () => clearInterval(intervalID);
   }, []);
 
   const photoModalHandler = (id: string) => {
