@@ -33,10 +33,9 @@ export default function MainPage() {
       return Object.keys(item).find((key) => {
         if (item[key as keyof Position].toString().includes(searchInput)) {
           if (
-            equipmentTypeFilter === 'All' ||
-            (item.equipmentType === equipmentTypeFilter &&
-              boxingTypeFilter === 'All') ||
-            boxingTypeFilter === item.boxingType
+            (equipmentTypeFilter === 'All' ||
+              item.equipmentType === equipmentTypeFilter) &&
+            (boxingTypeFilter === 'All' || boxingTypeFilter === item.boxingType)
           )
             return true;
         }
